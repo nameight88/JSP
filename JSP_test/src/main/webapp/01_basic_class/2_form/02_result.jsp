@@ -11,7 +11,7 @@
  	}
    	
    	for(int i =0; i<hobbys.length ;i+=1){
-   		hobby += v+'/';
+   		//hobby += v+'/';
    	}
     %>
 <!DOCTYPE html>

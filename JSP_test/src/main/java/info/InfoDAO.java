@@ -1,4 +1,4 @@
-package temp;
+package info;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -9,9 +9,9 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
-public class EmpDao {
+public class InfoDAO {
 
-	private static EmpDao  instance;
+	private static InfoDAO  instance;
 
 	// DB 연결시  관한 변수  
 	private static final String 	dbDriver	=	"com.mysql.cj.jdbc.Driver";
@@ -20,14 +20,14 @@ public class EmpDao {
 	private static final String		dbPass		=	"tiger";
 
 
-	private EmpDao() throws Exception {
+	private InfoDAO() throws Exception {
 		Class.forName( dbDriver );	
 	}
 
-	public static EmpDao getInstance( ) throws Exception {
+	public static InfoDAO getInstance( ) throws Exception {
 		if( instance == null )
 		{
-			instance = new EmpDao();
+			instance = new InfoDAO();
 		}
 		return instance;
 	}
@@ -37,7 +37,7 @@ public class EmpDao {
 	 * 리턴값
 	 * 역할
 	 */
-	public boolean loginCheck(EmpVO vo) throws Exception{
+	public boolean loginCheck(InfoVO vo) throws Exception{
 		Connection	con = null;	//성공유무와 별개로 무조건 닫아주어야한다.
 		ResultSet rs = null;
 		PreparedStatement ps = null;
@@ -69,7 +69,7 @@ public class EmpDao {
 
 	}
 	
-	public void insertEmp(EmpVO vo) throws Exception {
+	public void insertEmp(InfoVO vo) throws Exception {
 		Connection	con = null;	//성공유무와 별개로 무조건 닫아주어야한다.
 		ResultSet rs = null;
 		Statement stmt	= null;
@@ -101,11 +101,11 @@ public class EmpDao {
 			if( con  != null ) { try{ con.close(); } catch(SQLException ex){} }
 		}
 	}
-	public List<EmpVO> selectEmp() throws Exception{
+	public List<InfoVO> selectEmp() throws Exception{
 		Connection	con = null;
 		PreparedStatement ps = null;
 		ResultSet rs = null;
-		List<EmpVO> list = new ArrayList<EmpVO>();
+		List<InfoVO> list = new ArrayList<InfoVO>();
 		try {
 			con	= DriverManager.getConnection( dbUrl, dbUser, dbPass );
 			String sql = " SELECT empno , ename , deptno , job "
@@ -113,7 +113,7 @@ public class EmpDao {
 			ps	= con.prepareStatement( sql );
 			rs  = ps.executeQuery();
 			while(rs.next()) {
-				EmpVO emp = new EmpVO();
+				InfoVO emp = new InfoVO();
 				emp.setEmpno(rs.getInt("empno"));
 				emp.setEname(rs.getString("ename"));
 				emp.setDeptno(rs.getInt("deptno"));

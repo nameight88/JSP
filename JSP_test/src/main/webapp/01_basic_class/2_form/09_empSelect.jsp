@@ -5,7 +5,7 @@
 <%@ page import="java.util.*" %>
 
 <%
-	EmpDao dao = EmpDao.getInstance();
+EmpDao dao = EmpDao.getInstance();
 	//List<EmpVO> list = dao.selectEmp();
 	List<EmpVO> list = dao.selectEmp();
 %>
@@ -17,7 +17,9 @@
 </head>
 <body>
 
-	<% for(EmpVO vo : list){ %>
+	<%
+	for(EmpVO vo : list){
+	%>
 	<%= vo.getEmpno() %>
 	<%= vo.getEname() %>
 	<%= vo.getDeptno() %>

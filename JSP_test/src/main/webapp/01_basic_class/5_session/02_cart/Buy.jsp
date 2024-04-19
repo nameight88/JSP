@@ -10,9 +10,17 @@
 	request.setCharacterEncoding("utf-8");
 	
 	// 1. 세션에서 지정한 cart 속성값을 얻어온다
+	Object ob = session.getAttribute("cart");
+	//request로 속성을 얻는게 아니라 session으로 얻어와야한다.
 	// 2. 위의 값이 null 이면 리턴하고, 그렇지 않으면 glist 에 세션의 값을 지정
+	if(ob == null){
+		response.sendRedirect("wshop.jsp");
+		return;
+	}else{
+		glist = (ArrayList<Goods>)ob;
+	}
 	// 3. 세션에서 속성을 제거한다
-
+	session.removeAttribute("cart");
 		
 %>		 
  
@@ -23,7 +31,6 @@
 
 <%
 		int sum = 0; 
-
 		for(int i=0; i < glist.size(); i++) { 
 			Goods goods = (Goods) glist.get(i); 
 			int gp = goods.getPrice(); 

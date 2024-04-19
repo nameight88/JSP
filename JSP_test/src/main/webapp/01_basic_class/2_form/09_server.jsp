@@ -4,7 +4,7 @@
 <%@ page import="temp.*"%>
 
 <%
-		//[1] 입력한 값들을 가져오기
+//[1] 입력한 값들을 가져오기
 		String empno = request.getParameter("empno");
 		String ename = request.getParameter("ename");
 		String deptno = request.getParameter("deptno");
