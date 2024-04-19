@@ -17,8 +17,12 @@
 	<button>중복확인</button>
 	<br/>
 	<label for="pw">비밀번호</label>
-	<input type="password"id="" name="" pattenrn="" minlength="4">
+	<input type="password" id="" name="" pattenrn="" minlength="4">
 	<button type='submit' value='signup'>회원가입</button><button>취소</button>
+	<label></label>
+
+
+
 </form>
 </body>
 </html>
