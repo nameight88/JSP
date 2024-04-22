@@ -15,7 +15,7 @@ public class EmpDao {
 
 	// DB 연결시  관한 변수  
 	private static final String 	dbDriver	=	"com.mysql.cj.jdbc.Driver";
-	private static final String		dbUrl		=	"jdbc:mysql://localhost:3306/basic";
+	private static final String		dbUrl		=	"jdbc:mysql://localhost:3306/review";
 	private static final String		dbUser		=	"scott";
 	private static final String		dbPass		=	"tiger";
 
