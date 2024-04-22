@@ -2,42 +2,42 @@ package info;
 
 public class InfoVO {
 	
-	 int empno; //사번
-	 String ename; //사원명
-	 int deptno; //부서번호
-	 String job; //업무
-	 int sal; //월급
-	
-	//setter,getter
-	public int getEmpno() {
-		return empno;
+	 String info_id;
+	 String info_pw;
+	 String info_name;
+	 String info_tel;
+	 String info_addr;
+	 
+	 //getter and setter
+	public String getInfo_id() {
+		return info_id;
 	}
-	public void setEmpno(int empno) {
-		this.empno = empno;
+	public void setInfo_id(String info_id) {
+		this.info_id = info_id;
 	}
-	public String getEname() {
-		return ename;
+	public String getInfo_pw() {
+		return info_pw;
 	}
-	public void setEname(String ename) {
-		this.ename = ename;
+	public void setInfo_pw(String info_pw) {
+		this.info_pw = info_pw;
 	}
-	public int getDeptno() {
-		return deptno;
+	public String getInfo_name() {
+		return info_name;
 	}
-	public void setDeptno(int deptno) {
-		this.deptno = deptno;
+	public void setInfo_name(String info_name) {
+		this.info_name = info_name;
 	}
-	public String getJob() {
-		return job;
+	public String getInfo_tel() {
+		return info_tel;
 	}
-	public void setJob(String job) {
-		this.job = job;
+	public void setInfo_tel(String info_tel) {
+		this.info_tel = info_tel;
 	}
-	public int getSal() {
-		return sal;
+	public String getInfo_addr() {
+		return info_addr;
 	}
-	public void setSal(int sal) {
-		this.sal = sal;
+	public void setInfo_addr(String info_addr) {
+		this.info_addr = info_addr;
 	}
 	
 	

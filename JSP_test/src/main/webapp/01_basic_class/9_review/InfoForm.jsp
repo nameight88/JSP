@@ -14,7 +14,7 @@
 </head>
 <body>
  <div class="wrapper">
-        <form id="frmtest" method='get'>
+        <form id="frmtest" method='get' action='infoSave.jsp'>
             <div class="form-field">
                 <label class="label-form" for="username">성명</label>
                 <input type="text" class="form-control" name="username" id="username" required>

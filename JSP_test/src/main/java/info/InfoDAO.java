@@ -37,6 +37,7 @@ public class InfoDAO {
 	 * 리턴값
 	 * 역할
 	 */
+	
 	public boolean loginCheck(InfoVO vo) throws Exception{
 		Connection	con = null;	//성공유무와 별개로 무조건 닫아주어야한다.
 		ResultSet rs = null;
@@ -68,7 +69,8 @@ public class InfoDAO {
 		return result;
 
 	}
-	
+	*/
+	/*
 	public void insertEmp(InfoVO vo) throws Exception {
 		Connection	con = null;	//성공유무와 별개로 무조건 닫아주어야한다.
 		ResultSet rs = null;
@@ -130,3 +132,4 @@ public class InfoDAO {
 	}
 
 }
+*/
