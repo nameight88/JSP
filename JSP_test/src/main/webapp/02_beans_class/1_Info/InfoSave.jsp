@@ -1,11 +1,12 @@
 <%@ page contentType="text/html; charset=UTF-8" 
 pageEncoding="UTF-8"%>
 <%@ page import="info.beans.InfoBean" %>
-
+<!-- 내가 필요한 변수들이 있는 곳에서 호출 -->
 
 <jsp:useBean id="bean" class="info.beans.InfoBean">
-	<jsp:setProperty property='*' name='bean' />
+	<jsp:setProperty property='*' name='bean' /> 
 </jsp:useBean>
+<!-- id name 마음대로 줘도 된다. property *값은 전부다 가져온다 -->
 <%
 /*
  //1.이전 화면의 폼에서 데이터 받아오기

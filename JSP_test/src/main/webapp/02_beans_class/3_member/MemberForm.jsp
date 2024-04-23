@@ -19,10 +19,10 @@ $(function () {
 		//변수를 새로 선언해서 저장을 해도 된다.
 		//[Ajax 방식]
 		$.ajax({
-			type :'get'
-			,url : 'CheckId.jsp'
-			,data:	{'userId':idInput}
-			,success :function(result){
+			type :'get' //데이터 전송 방식
+			,url : 'CheckId.jsp' //이동하는 주소
+			,data:	{'userId':idInput} //주소를 이동을 할때 가져가는 데이터
+			,success :function(result){ //성공을 했을때의 함수실행
 				//alert(result);
 				if(result.trim()== 'true'){
 					$('#result').text("아이디가 중복됩니다.")
