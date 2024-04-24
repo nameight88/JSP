@@ -7,6 +7,6 @@ public class ReplyException extends Exception
 	  	}
 	  	
 	  public ReplyException(String error){
-	  		super( error );
+	  		super( error );	
 	  	}
 }
