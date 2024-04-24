@@ -4,8 +4,13 @@
 
 <%
 	// 1. 삭제할 레코드의 게시글번호와 비밀번호를 넘겨받기
+	String id = request.getParameter("seq");
+	String password = request.getParameter("password");
+
 	// 2. Service에 delete() 호출
-	int result =  0; 
+	DeleteArticleService service = DeleteArticleService.getInstance();
+	service.delete(id, password);
+	int result = 0; 
 %>
 <!DOCTYPE html>
 <html>

@@ -7,6 +7,8 @@
    response.setHeader("Cache-Control","no-cache");   // HTTP 1.1 version
    response.setHeader("Cache-Control","no-store"); // 일부 파이어폭스 버스 관련
    response.setDateHeader("Expires", 1L);         // 현재 시간 이전으로 만료일을 지정함으로써 응답결과가 캐쉬되지 않도록 설정
+   //브라우저가 캐쉬를 자동으로 다시 안 읽을까봐 다시 읽게끔 만드는 코딩
+   
 %>
 
 <%
@@ -47,7 +49,11 @@ int totalPage = service.getTotalCount();
    <!--  여기에 목록 출력하기  -->
          <tr>
             <td><%=vo.getSeq() %></td>
-            <td><%=vo.getTitle() %></td>
+            <td>
+            	<a href='BoardView.jsp?seq=<%=vo.getSeq()%>'>
+           			 <%=vo.getTitle() %>
+            	</a>
+            </td>
             <td><%=vo.getWriter() %></td>
             <td><%=vo.getRegdate() %></td>
             <td><%=vo.getCnt() %></td>

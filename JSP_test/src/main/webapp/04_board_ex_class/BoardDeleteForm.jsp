@@ -3,7 +3,7 @@
 <%@ page import="board_ex.service.*, board_ex.model.*" %>
 <%
 	// 1. 삭제할 레코드의 게시글번호 넘겨받기
-	
+	String seq = request.getParameter("seq");
 %>      
 <!DOCTYPE html>
 <html>
@@ -17,8 +17,7 @@
 	삭제할 글암호를 입력하세요 <br/>
 	<input type="password" name="password">
 	<!-- 2. 게시글번호를 다음 페이지로 넘기기 위해 hidden 태그로 지정 -->
-	
-	
+	<input type="hidden" name="seq" value="<%=seq%>"/>
 	<input type="submit" value="삭제하기">
 </form>
 

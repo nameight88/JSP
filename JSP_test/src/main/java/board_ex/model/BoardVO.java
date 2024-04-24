@@ -3,14 +3,15 @@ package board_ex.model;
 public class BoardVO
 {
 	// member field
-	private	int		seq;		
-	private	String	title;		
-	private	String	writer;
-	private	String	content;
-	private String 	regdate;
-	private	int		cnt;
-	private String 	pass;
+	private	int		seq;		//글번호
+	private	String	title;		//글제목
+	private	String	writer;		//글작성자
+	private	String	content;	//글 내용
+	private String 	regdate;	//작성일자
+	private	int		cnt;		//조회수
+	private String 	pass;		//글 비밀번호
 	
+	//getter and setter
 	public int getSeq() {
 		return seq;
 	}

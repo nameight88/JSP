@@ -34,6 +34,7 @@ $(function(){//jquery
 	비밀번호 : <input type='password' name='pass'><br/><br/>
 	<input type='button' value='작성'>
 	<input type='reset' value='취소'>
+	<!-- name에 값을 넣을때 vo에 값들과 비교를 해서 같게 넣어줘야한다. -->
 	</form>
 
 </body>
