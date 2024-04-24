@@ -23,7 +23,7 @@ public class BoardDao
    
    // [ MySQL / MariaDB ]
    private static final String    dbDriver   =   "com.mysql.cj.jdbc.Driver";
-   private static final String      dbUrl      =   "jdbc:mysql://127.0.0.1:3306/basic";
+   private static final String      dbUrl      =   "jdbc:mysql://127.0.0.1:3306/review";
    private static final String      dbUser      =   "scott";
    private static final String      dbPass      =   "tiger";
    

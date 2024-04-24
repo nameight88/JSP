@@ -42,9 +42,8 @@ public class ListArticleService {
    
    
    public int getTotalCount() throws BoardException{
-      
       totalRecCount = BoardDao.getInstance().getTotalCount();
-      
+      //dao에 있는 getTotalCount를 호출을 해서 totalRecCount 변수에 초기화
       pageTotalCount=totalRecCount/countPerPage;
       if((totalRecCount%countPerPage) >  0) {
          pageTotalCount++;

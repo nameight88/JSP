@@ -17,7 +17,7 @@ ListArticleService service = ListArticleService.getInstance();
 List <BoardVO> mList =service.getArticleList(pg);
 
 int totalPage = service.getTotalCount();
-
+//service에서 만든 getTotalCount를 호출해서 totalPage라는 변수로 초기화
 
  
 %>
@@ -60,7 +60,7 @@ int totalPage = service.getTotalCount();
          <td colspan="5">
             <% for(int i =1; i<= totalPage; i++){ %>
                <a href="BoardList.jsp?page=<%=i%>">[<%=i %>]</a>
-         
+         	<%//BoardList에 하이퍼 링크를 page라는 변수에 [i]값도 같이 넣어서 가져간다. %>
             <% } //end of for %>
             <a href="BoardInputForm.jsp">글쓰기</a>
          </td>
