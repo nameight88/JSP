@@ -124,7 +124,7 @@ public class CommentRepository
 		
 		try {
 			int result = sess.update("CommentMapper.updateComment",comment);
-			if (result >0) { //모르면 0으로 해라 자식아;;
+			if (result > 0) { //모르면 0으로 해라 자식아;;
 				sess.commit();
 			}else {
 				sess.rollback();
