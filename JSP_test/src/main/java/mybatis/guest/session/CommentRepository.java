@@ -118,13 +118,13 @@ public class CommentRepository
 		}
 	}//end of deleteComment
 	
-	public void updateComment(int cNo) {
+	public void updateComment(Comment comment) {
 		SqlSession sess = 
 				getSqlSessionFactory().openSession();
 		
 		try {
-			int result = sess.update("CommentMapper.updateComment",cNo);
-			if (result != 1) {
+			int result = sess.update("CommentMapper.updateComment",comment);
+			if (result >0) { //모르면 0으로 해라 자식아;;
 				sess.commit();
 			}else {
 				sess.rollback();

@@ -15,6 +15,7 @@
 			,e.ENAME ename
 			,e.JOB  job
 			,d.DNAME  dname
+			,d.loc loc
 		from emp e inner join dept d
 		on e.DEPTNO = d.DEPTNO
 </select>

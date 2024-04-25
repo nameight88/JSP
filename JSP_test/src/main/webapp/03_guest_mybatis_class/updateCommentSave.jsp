@@ -12,12 +12,11 @@
  </jsp:useBean>   
     
 <% 
- 	int cNo = Integer.parseInt(request.getParameter("cNo"));
 
 	CommentService service = CommentService.getInstance();
-	service.updateComment(cNo);
+	service.updateComment(comment);
 	
-	response.sendRedirect("lisetComment.jsp");
+	response.sendRedirect("listComment.jsp");
 %>
 
 <!DOCTYPE HTML>

@@ -34,7 +34,7 @@ for(HashMap m : list){
 			<td><%=vo.get("ename") %></td>
 			<td><%=vo.get("job") %></td>
 			<td><%=vo.get("dname") %></td>
-			<td></td>
+			<td><%=vo.get("loc") %></td>
 		</tr> 
 	<%} %>
 </table>

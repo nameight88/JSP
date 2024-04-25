@@ -52,10 +52,10 @@
 			WHERE comment_no = #{cNo}
 		</delete>
 		
-		<update id="updateComment" parameterType="int">
+		<update id="updateComment" parameterType="Comment">
 			UPDATE comment_tab
-			SET (comment_content=#{commentContent},reg_date=sysdate())
-			WHERE comment_no = #{cNo}
+			SET comment_content=#{commentContent}
+			WHERE comment_no = #{commentNo}
 		</update>
 		
 </mapper>

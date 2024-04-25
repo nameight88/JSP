@@ -48,7 +48,7 @@ public class CommentService {
 		repo.deleteComment(cNo); //래퍼지토리 안에 있는 함수 호출
 	}
 	
-	public void updateComment(int cNo) {
-		repo.updateComment(cNo);
+	public void updateComment(Comment comment) {
+		repo.updateComment(comment);
 	}
 }
