@@ -15,7 +15,7 @@ public class EmpDao {
 
 	// DB 연결시  관한 변수  
 	private static final String 	dbDriver	=	"com.mysql.cj.jdbc.Driver";
-	private static final String		dbUrl		=	"jdbc:mysql://localhost:3306/basic";
+	private static final String		dbUrl		=	"jdbc:mysql://localhost:3306/review";
 	private static final String		dbUser		=	"scott";
 	private static final String		dbPass		=	"tiger";
 
@@ -31,7 +31,44 @@ public class EmpDao {
 		}
 		return instance;
 	}
+	/*
+	 * 함수명
+	 * 인자
+	 * 리턴값
+	 * 역할
+	 */
+	public boolean loginCheck(EmpVO vo) throws Exception{
+		Connection	con = null;	//성공유무와 별개로 무조건 닫아주어야한다.
+		ResultSet rs = null;
+		PreparedStatement ps = null;
+		
+		boolean result = false;
 
+		try {
+			con	= DriverManager.getConnection( dbUrl, dbUser, dbPass );
+
+			String sql = "SELECT * FROM emp "
+					+ "WHERE ename = ? AND empno = ? ";
+
+			ps	= con.prepareStatement( sql );
+			ps.setString(1,vo.ename);
+			ps.setInt(2,vo.empno);
+			rs = ps.executeQuery();
+			
+			if(rs.next()){
+				result = true;
+			}
+		}catch( Exception ex ){
+			throw new Exception("사원정보 ) DB에 입력시 오류  : " + ex.toString() );	
+		} finally{
+			if( rs   != null ) { try{ rs.close();  } catch(SQLException ex){} }
+			if( ps   != null ) { try{ ps.close();  } catch(SQLException ex){} }
+			if( con  != null ) { try{ con.close(); } catch(SQLException ex){} }
+		}
+		return result;
+
+	}
+	
 	public void insertEmp(EmpVO vo) throws Exception {
 		Connection	con = null;	//성공유무와 별개로 무조건 닫아주어야한다.
 		ResultSet rs = null;
@@ -76,12 +113,12 @@ public class EmpDao {
 			ps	= con.prepareStatement( sql );
 			rs  = ps.executeQuery();
 			while(rs.next()) {
-				 EmpVO emp = new EmpVO();
-				    emp.setEmpno(rs.getInt("empno"));
-				    emp.setEname(rs.getString("ename"));
-				    emp.setDeptno(rs.getInt("deptno"));
-				    emp.setJob(rs.getString("job"));
-				    list.add(emp);
+				EmpVO emp = new EmpVO();
+				emp.setEmpno(rs.getInt("empno"));
+				emp.setEname(rs.getString("ename"));
+				emp.setDeptno(rs.getInt("deptno"));
+				emp.setJob(rs.getString("job"));
+				list.add(emp);
 			}
 		}catch( Exception ex ){
 			throw new Exception("사원정보 ) DB에 입력시 오류  : " + ex.toString() );	

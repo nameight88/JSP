@@ -47,8 +47,10 @@
 
 
 		<!-- #######  리다이렉트 페이지 이동  -->
-		
-		
+		<%response.sendRedirect("04_responseSecond.jsp"); %>
+		<%// [1]클라이언트가 first.jsp요청 브라우저는 first.jsp 제공 request
+			// [2] redirect가 다시 second요청을 해서 브라우저는 다시 redirect
+			// second.jsp를 제공해서 서버를 2번 왔다갔다.%>
 		
 </body>
 </html>

@@ -2,7 +2,7 @@ package temp;
 
 public class EmpVO {
 	
-	 int empno; //사번
+	int empno; //사번
 	 String ename; //사원명
 	 int deptno; //부서번호
 	 String job; //업무
@@ -39,7 +39,4 @@ public class EmpVO {
 	public void setSal(int sal) {
 		this.sal = sal;
 	}
-	
-	
-	
 }
